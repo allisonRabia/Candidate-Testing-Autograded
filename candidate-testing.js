@@ -24,22 +24,28 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-candidateAnswer = input.question(question);
+  //Replace your code from TODO 1.2b with a loop that programmatically asks each question in the array and stores the user’s responses.
+  for (i = 0 ; i < questions.length; i++) {
+  candidateAnswers[i] = input.question(questions[i]);
 }
+}
+
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+//Replace the basic feedback from TODO 1.2c with a template literal that displays each of the candidate’s responses in addition to the corresponding correct answers.
+for (i = 0 ; i < questions.length; i++) {
+if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
   console.log("You answered correctly!")  
-  console.log("Your Answer: " + candidateAnswer);
-    console.log("Correct Answer: " + correctAnswer);
+  console.log(`Your Answer: ${candidateAnswers[i]}`);
+    console.log(`Correct Answer: ${correctAnswers[i]}`);
  } else {
     console.log("You answered incorrectly.")  
-  console.log("Your Answer: " + candidateAnswer);
-    console.log("Correct Answer: " + correctAnswer);
+  console.log(`Your Answer: ${candidateAnswers[i]}`);
+    console.log(`Correct Answer: ${correctAnswers[i]}`);
   }
-
+}
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
