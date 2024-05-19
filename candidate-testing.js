@@ -22,6 +22,7 @@ function askForName() {
   console.log(candidateName);
 }
 
+
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   //Replace your code from TODO 1.2b with a loop that programmatically asks each question in the array and stores the user’s responses.
@@ -30,7 +31,8 @@ function askQuestion() {
 }
 }
 
-
+let numCorrectAnswers = 0;
+let numQuizQuestions = 5;
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -40,18 +42,52 @@ if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
   console.log("You answered correctly!")  
   console.log(`Your Answer: ${candidateAnswers[i]}`);
     console.log(`Correct Answer: ${correctAnswers[i]}`);
+    numCorrectAnswers++;
+    console.log(numCorrectAnswers);
+
  } else {
     console.log("You answered incorrectly.")  
   console.log(`Your Answer: ${candidateAnswers[i]}`);
     console.log(`Correct Answer: ${correctAnswers[i]}`);
+
   }
 }
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+ //TODO 3.2 use this variable to calculate the candidates score.
+ let grade = '';  
+ //let percentCorrect = 0;
 
+ //function scoreQuiz() {
+    // for (i = 0; i < questions.length; i++) {
+    //     if (cand)
+    //
+    //percentCorrect = ;
+    grade = (((numCorrectAnswers)/(numQuizQuestions)) * 100);
+    
+    if (grade === 0) {
+     console.log(`You scored ${grade} %.  You have failed this quiz.`); 
+    } else if (grade === 20) {
+      console.log(`You scored ${grade} %.  You have failed this test!`);
+      
+    }  else if (grade === 40) {
+      console.log(`You scored ${grade} %.  You have failed this test!`);
+      
+    }  else if (grade === 60) {
+        console.log(`You scored ${grade} %.  You have failed this test!`);
+        
+      }   else if (grade === 80) {
+        console.log(`You scored ${grade} %.  You have passed this test!`);
+        
+      }   else if (grade === 100) {
+        console.log(`You scored ${grade} %.  You have passed this test!`);
+        
+      }
+    console.log(grade);
 
-  return grade;
+      return grade;
 }
+  //scoreQuiz();
+  
 
 function runProgram() {
   askForName();
@@ -60,6 +96,7 @@ function runProgram() {
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
+
 
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
