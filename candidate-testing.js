@@ -31,10 +31,9 @@ function askQuestion() {
 }
 }
 
-let numCorrectAnswers = 0;
-let numQuizQuestions = 5;
 function gradeQuiz(candidateAnswers) {
-
+  let numCorrectAnswers = 0;
+  let numQuizQuestions = 5;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 //Replace the basic feedback from TODO 1.2c with a template literal that displays each of the candidate’s responses in addition to the corresponding correct answers.
 for (i = 0 ; i < questions.length; i++) {
@@ -64,21 +63,9 @@ if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
     //percentCorrect = ;
     grade = (((numCorrectAnswers)/(numQuizQuestions)) * 100);
     
-    if (grade === 0) {
+    if (grade < 80) {
      console.log(`You scored ${grade} %.  You have failed this quiz.`); 
-    } else if (grade === 20) {
-      console.log(`You scored ${grade} %.  You have failed this test!`);
-      
-    }  else if (grade === 40) {
-      console.log(`You scored ${grade} %.  You have failed this test!`);
-      
-    }  else if (grade === 60) {
-        console.log(`You scored ${grade} %.  You have failed this test!`);
-        
-      }   else if (grade === 80) {
-        console.log(`You scored ${grade} %.  You have passed this test!`);
-        
-      }   else if (grade === 100) {
+    }    else if (grade >= 80) {
         console.log(`You scored ${grade} %.  You have passed this test!`);
         
       }
