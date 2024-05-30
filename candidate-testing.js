@@ -42,7 +42,7 @@ if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
   console.log(`Your Answer: ${candidateAnswers[i]}`);
     console.log(`Correct Answer: ${correctAnswers[i]}`);
     numCorrectAnswers++;
-    console.log(numCorrectAnswers);
+    //console.log(numCorrectAnswers);
 
  } else {
     console.log("You answered incorrectly.")  
@@ -69,7 +69,7 @@ if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
         console.log(`You scored ${grade} %.  You have passed this test!`);
         
       }
-    console.log(grade);
+    //console.log(grade);
 
       return grade;
 }
